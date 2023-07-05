@@ -11,7 +11,7 @@
             type="font/woff2"
             crossorigin="anonymous"
         />
-        <script defer src="vendors/react-with-dom.js"></script>
+        <script src="vendors/react-with-dom.js"></script>
         <link rel="stylesheet" type="text/css" href="reset.css" />
         <link rel="stylesheet" type="text/css" href="styles.css" />
     </head>
@@ -37,8 +37,8 @@
             <div class="footer__copyright">© 1997–2023 ООО «Яндекс»</div>
         </footer>
 
-        <script defer src="vendors/babel.min.js"></script>
-        <script defer type="text/babel">
+        <script src="vendors/babel.min.js"></script>
+        <script type="text/babel">
             function Header() {
                 let [expanded, setExpanded] = React.useState(false);
                 let [toggled, setToggled] = React.useState(false);
@@ -262,9 +262,9 @@
                     ],
                 },
             };
-          /*   for (let i = 0; i < 6; ++i) {
+            //for (let i = 0; i < 6; ++i) {
                 TABS.all.items = [...TABS.all.items, ...TABS.all.items];
-            } */
+            //}
             const TABS_KEYS = Object.keys(TABS);
 
             function Main() {
@@ -298,7 +298,7 @@
                         (acc, item) => acc + item.width,
                         0
                     );
-                   /*  const sumHeight = sizes.reduce(
+                  /*   const sumHeight = sizes.reduce(
                         (acc, item) => acc + item.height,
                         0
                     ); */
