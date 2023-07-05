@@ -6,10 +6,12 @@
         <title>Яндекс.Дом</title>
 
         <script
+            rel="preload"
             src="https://unpkg.com/react@18/umd/react.production.min.js"
             crossorigin
         ></script>
         <script
+            rel="preload"
             src="https://unpkg.com/react-dom@18/umd/react-dom.production.min.js"
             crossorigin
         ></script>
@@ -40,7 +42,7 @@
 
         <script src="vendors/babel.min.js"></script>
         <script type="text/babel">
-            const Header = React.memo(function Header() {
+            function Header() {
                 let [expanded, setExpanded] = React.useState(false);
                 let [toggled, setToggled] = React.useState(false);
 
@@ -97,9 +99,9 @@
                         </ul>
                     </header>
                 );
-            });
+            }
 
-            const Event = React.memo(function Event(props) {
+            function Event(props) {
                 const ref = React.useRef();
 
                 const { onSize } = props;
@@ -132,7 +134,7 @@
                         </button>
                     </li>
                 );
-            });
+            }
 
             const TABS = {
                 all: {
@@ -268,7 +270,7 @@
             }
             const TABS_KEYS = Object.keys(TABS);
 
-            const Main = React.memo(function Main() {
+            function Main() {
                 const ref = React.useRef();
                 const initedRef = React.useRef(false);
                 const [activeTab, setActiveTab] = React.useState("");
@@ -520,7 +522,7 @@
                         </section>
                     </main>
                 );
-            });
+            }
 
             // setTimeout(() => {
             const root = ReactDOM.createRoot(document.getElementById("app"));
