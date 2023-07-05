@@ -40,7 +40,7 @@
 
         <script src="vendors/babel.min.js"></script>
         <script type="text/babel">
-            function Header() {
+            const Header = React.memo(function Header() {
                 let [expanded, setExpanded] = React.useState(false);
                 let [toggled, setToggled] = React.useState(false);
 
@@ -97,9 +97,9 @@
                         </ul>
                     </header>
                 );
-            }
+            });
 
-            function Event(props) {
+            const Event = React.memo(function Event(props) {
                 const ref = React.useRef();
 
                 const { onSize } = props;
@@ -132,7 +132,7 @@
                         </button>
                     </li>
                 );
-            }
+            });
 
             const TABS = {
                 all: {
@@ -268,7 +268,7 @@
             }
             const TABS_KEYS = Object.keys(TABS);
 
-            function Main() {
+            const Main = React.memo(function Main() {
                 const ref = React.useRef();
                 const initedRef = React.useRef(false);
                 const [activeTab, setActiveTab] = React.useState("");
@@ -520,7 +520,7 @@
                         </section>
                     </main>
                 );
-            }
+            });
 
             // setTimeout(() => {
             const root = ReactDOM.createRoot(document.getElementById("app"));
