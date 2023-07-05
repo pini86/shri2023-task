@@ -109,7 +109,7 @@
                     if (onSize) {
                         onSize({ width, height });
                     }
-                }, []);
+                });
 
                 return (
                     <li
@@ -262,9 +262,9 @@
                     ],
                 },
             };
-            for (let i = 0; i < 6; ++i) {
+            /*  for (let i = 0; i < 6; ++i) {
                 TABS.all.items = [...TABS.all.items, ...TABS.all.items];
-            }
+            } */
             const TABS_KEYS = Object.keys(TABS);
 
             function Main() {
@@ -282,7 +282,7 @@
                                 "all"
                         );
                     }
-                }, [activeTab, initedRef.current]);
+                });
 
                 const onSelectInput = (event) => {
                     setActiveTab(event.target.value);
@@ -309,7 +309,7 @@
                     if (newHasRightScroll !== hasRightScroll) {
                         setHasRightScroll(newHasRightScroll);
                     }
-                }, [sizes]);
+                });
 
                 const onArrowCLick = () => {
                     const scroller = ref.current.querySelector(
