@@ -262,7 +262,7 @@
                     ],
                 },
             };
-            /*  for (let i = 0; i < 6; ++i) {
+          /*   for (let i = 0; i < 6; ++i) {
                 TABS.all.items = [...TABS.all.items, ...TABS.all.items];
             } */
             const TABS_KEYS = Object.keys(TABS);
@@ -290,8 +290,7 @@
 
                 let sizes = [];
                 const onSize = (size) => {
-                    //sizes = [...sizes, size];
-                    sizes = sizes.concat(size);
+                    sizes = [...sizes, size];
                 };
 
                 React.useEffect(() => {
@@ -299,7 +298,7 @@
                         (acc, item) => acc + item.width,
                         0
                     );
-                    /*   const sumHeight = sizes.reduce(
+                   /*  const sumHeight = sizes.reduce(
                         (acc, item) => acc + item.height,
                         0
                     ); */
