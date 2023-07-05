@@ -109,7 +109,7 @@
                     if (onSize) {
                         onSize({ width, height });
                     }
-                });
+                }, []);
 
                 return (
                     <li
@@ -282,7 +282,7 @@
                                 "all"
                         );
                     }
-                });
+                }, [activeTab, initedRef.current]);
 
                 const onSelectInput = (event) => {
                     setActiveTab(event.target.value);
@@ -290,7 +290,8 @@
 
                 let sizes = [];
                 const onSize = (size) => {
-                    sizes = [...sizes, size];
+                    //sizes = [...sizes, size];
+                    sizes = sizes.concat(size);
                 };
 
                 React.useEffect(() => {
@@ -298,17 +299,17 @@
                         (acc, item) => acc + item.width,
                         0
                     );
-                    const sumHeight = sizes.reduce(
+                    /*   const sumHeight = sizes.reduce(
                         (acc, item) => acc + item.height,
                         0
-                    );
+                    ); */
 
                     const newHasRightScroll =
                         sumWidth > ref.current.offsetWidth;
                     if (newHasRightScroll !== hasRightScroll) {
                         setHasRightScroll(newHasRightScroll);
                     }
-                });
+                }, [sizes]);
 
                 const onArrowCLick = () => {
                     const scroller = ref.current.querySelector(
